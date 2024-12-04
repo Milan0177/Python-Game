@@ -12,6 +12,7 @@ path = './game/'
 class DoodleJump:
     def __init__(self, FPS=30000):
         self.screen = pygame.display.set_mode((800, 800))
+        pygame.display.set_caption("Airjump")  # Set the window title to "Airjump"
         self.green = pygame.image.load(path + "assets/green.png").convert_alpha()
         pygame.font.init()
         self.score = 0
