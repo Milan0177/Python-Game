@@ -189,8 +189,9 @@ class DoodleJump:
         return if_score_add
 
     def generatePlatforms(self):
-        y = 800
-        while y > -100:
+        y = 800  # Starting from the bottom of the screen
+        buffer_height = 400  # Add 400px as the buffer above the screen
+        while y > -100 - buffer_height:  # Extend the generation above the visible area
             x = random.randint(100, 650)
             platform = random.randint(0, 10)
             if platform < 8:
@@ -201,7 +202,7 @@ class DoodleJump:
             else:
                 platform = 2  # red
             self.platforms.append([x, y, platform, 0])
-            y -= 90
+            y -= 60
 
     def drawGrid(self):
         for x in range(80):
