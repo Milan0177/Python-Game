@@ -30,7 +30,7 @@ class Player(Sprite, Singleton):
 		Sprite.__init__(self,*args)
 		self.__startrect = self.rect.copy()
 		self.__maxvelocity = Vector2(config.PLAYER_MAX_SPEED,100)
-		self.__startspeed = 1.5
+		self.__startspeed = .5
 
 		self._velocity = Vector2()
 		self._input = 0
