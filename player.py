@@ -17,13 +17,7 @@ import settings as config
 getsign = lambda x : copysign(1, x)
 
 class Player(Sprite, Singleton):
-	"""
-	A class to represent the player.
-	
-	Manages player's input,physics (movement...).
-	Can be access via Singleton: Player.instance.
-	(Check Singleton design pattern for more info).
-	"""
+
 	# (Overriding Sprite.__init__ constructor)
 	def __init__(self,*args):
 		#calling default Sprite constructor
@@ -62,9 +56,7 @@ class Player(Sprite, Singleton):
 
 
 	def handle_event(self,event:Event) -> None:
-		""" Called in main loop foreach user input event.
-		:param event pygame.Event: user input event
-		"""
+
 		# Check if start moving
 		if event.type == KEYDOWN:
 			# Moves player only on x-axis (left/right)
@@ -74,6 +66,7 @@ class Player(Sprite, Singleton):
 			elif event.key == K_RIGHT:
 				self._velocity.x=self.__startspeed
 				self._input = 1
+
 		#Check if stop moving
 		elif event.type == KEYUP:
 			if (event.key== K_LEFT and self._input==-1) or (
